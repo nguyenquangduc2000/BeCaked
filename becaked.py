@@ -1,12 +1,12 @@
 from __future__ import division
 import numpy as np
 import tensorflow as tf
-import keras
-from keras.models import Sequential, Model, load_model
-from keras.layers import Input, LSTM, Dense, Activation, Concatenate, Add, Subtract, Multiply, Lambda, Reshape, Flatten, Dropout
-import keras.backend as K
-from keras.optimizers import RMSprop, Adam, SGD
-from keras.callbacks import LearningRateScheduler, ModelCheckpoint, EarlyStopping
+from tensorflow import keras
+from tensorflow.keras.models import Sequential, Model, load_model
+from tensorflow.keras.layers import Input, LSTM, Dense, Activation, Concatenate, Add, Subtract, Multiply, Lambda, Reshape, Flatten, Dropout
+import tensorflow.keras.backend as K
+from tensorflow.keras.optimizers import RMSprop, Adam, SGD
+from tensorflow.keras.callbacks import LearningRateScheduler, ModelCheckpoint, EarlyStopping
 import os
 from data_utils import *
 from utils import *

@@ -25,6 +25,14 @@ app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
 app.config['PERMANENT_SESSION_LIFETIME'] =  timedelta(hours = 1)
 
+countries = None
+world_series = None
+world_series_predict = None
+data_series = None
+date_series = None
+current_day = None
+data_countries_current = None
+
 def login_required(fn):
     @wraps(fn)
     def decorator(*args, **kwargs):
@@ -430,7 +438,7 @@ def update_data():
 def main():
     run_init = bool(os.environ.get("INIT_DATA", True))
     data_dir = str(os.environ.get("DATA_DIR", "./web_data"))
-    # init(run_init, data_dir)
+    init(run_init, data_dir)
 
     return app
 

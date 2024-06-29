@@ -3,7 +3,7 @@
 
 <head>
     <title>Insert new data</title>
-    <link rel="stylesheet" href = "/BeCaked{{ url_for(', filename='css/insert_data.css') }}">
+    <link rel="stylesheet" href = "/BeCaked{{ url_for('static', filename='css/insert_data.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .msg-form {
@@ -370,7 +370,7 @@
                     </form>
                     <div class="template-format-file">
                         <p><i>Template file: </i> <a
-                                href="/BeCaked{{ url_for(', filename='template_files/template-form-1.xlsx') }}" download>
+                                href="/BeCaked{{ url_for('static', filename='template_files/template-form-1.xlsx') }}" download>
                                 here</a></p>
                     </div>
                 </div>
@@ -498,7 +498,7 @@
                     </form>
                     <div class="template-format-file">
                         <p><i>Template file: </i> <a
-                                href="/BeCaked{{ url_for(', filename='template_files/template-form-2.xlsx') }}" download>
+                                href="/BeCaked{{ url_for('static', filename='template_files/template-form-2.xlsx') }}" download>
                                 here</a></p>
                     </div>
                 </div>
@@ -550,7 +550,7 @@
                     </form>
                     <div class="template-format-file">
                         <p><i>Template file: </i> <a
-                                href="/BeCaked{{ url_for(', filename='template_files/template-form-3.xlsx') }}" download>
+                                href="/BeCaked{{ url_for('static', filename='template_files/template-form-3.xlsx') }}" download>
                                 here</a></p>
                     </div>
                 </div>
@@ -602,7 +602,7 @@
                     </form>
                     <div class="template-format-file">
                         <p><i>Template file: </i> <a
-                                href="/BeCaked{{ url_for(', filename='template_files/template-form-4.xlsx') }}" download>
+                                href="/BeCaked{{ url_for('static', filename='template_files/template-form-4.xlsx') }}" download>
                                 here</a></p>
                     </div>
                 </div>
@@ -610,7 +610,7 @@
             </div>
         </div>
     </div>
-    <script src = "/BeCaked{{ url_for(', filename='js/insert_data.js') }}"></script>
+    <script src = "/BeCaked{{ url_for('static', filename='js/insert_data.js') }}"></script>
 </body>
 
 </html>

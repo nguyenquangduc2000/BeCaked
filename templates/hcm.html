@@ -29,8 +29,8 @@
 <script>
   // Chart.register(zoomPlugin);
 </script>
-<script src="{{ url_for('static', filename='js/draw_maps.js') }}"></script>
-<script src="{{ url_for('static', filename='js/draw.js') }}"></script>
+<script src="/BeCaked{{ url_for(', filename='js/draw_maps.js') }}"></script>
+<script src="/BeCaked{{ url_for(', filename='js/draw.js') }}"></script>
 {% endblock %}
 {% block content %}
 
@@ -366,9 +366,9 @@
   // const bddh2003 = new L.tileLayer('http://120.72.116.162/geoserver/gwc/service/wmts?service=wmts&request=GetTile&version=1.0.0&layer=tnmt:BDDH&tilematrixset=EPSG:90091...e%2Fpng', {
   //   attribution: "<a href='http://www.donre.hochiminhcity.gov.vn' target='_blank'>HCMC DONRE</a>", maxZoom: 20, opacity: 1, fillOpacity: 1});
 
-  var quanhuyen_base = new L.GeoJSON.AJAX("{{ url_for('static', filename='data/quanhuyen_2021.geojson') }}",{
+  var quanhuyen_base = new L.GeoJSON.AJAX("/BeCaked{{ url_for(', filename='data/quanhuyen_2021.geojson') }}",{
     style: {"color": "blue", "opacity": 1, "weight": 1.75, "fillOpacity": 0, "interactive": false}})
-  var phuongxa_base = new L.GeoJSON.AJAX("{{ url_for('static', filename='data/phuongxa_2021.geojson') }}",{
+  var phuongxa_base = new L.GeoJSON.AJAX("/BeCaked{{ url_for(', filename='data/phuongxa_2021.geojson') }}",{
     style: {"color": "#000", "weight": .5, "opacity": .5, "fillOpacity": 0, "interactive": false}})
   // var quanhuyen_base = hcmgis_map
 
@@ -418,7 +418,7 @@
   id_1_to_code = {{ id_1_to_code|tojson }}
   centre = {{ centre|tojson }}
 
-  var tinh = new L.GeoJSON.AJAX("{{ url_for('static', filename='data/vnm1.geojson') }}",{
+  var tinh = new L.GeoJSON.AJAX("/BeCaked{{ url_for(', filename='data/vnm1.geojson') }}",{
                       style: function(tinh) {
                           id_1 = tinh.properties["ID_1"]
                           level = levels[id_1_to_code[id_1]+"00000000"][0]
@@ -485,7 +485,7 @@
                     });
  
  
-  var quanhuyen = new L.GeoJSON.AJAX("{{ url_for('static', filename='data/quanhuyen_2021.geojson') }}",{
+  var quanhuyen = new L.GeoJSON.AJAX("/BeCaked{{ url_for(', filename='data/quanhuyen_2021.geojson') }}",{
                       style: function(district) {
                           id_2 = district.properties["maDVHC"]
                           level = levels["79"+id_2+"00000"][0]
@@ -545,7 +545,7 @@
                                   if (quanhuyen_focus !== null) {
                                     map.removeLayer(quanhuyen_focus)
                                   }
-                                  quanhuyen_focus = new L.GeoJSON.AJAX("{{ url_for('static', filename='data/quanhuyen_2021.geojson') }}",{
+                                  quanhuyen_focus = new L.GeoJSON.AJAX("/BeCaked{{ url_for(', filename='data/quanhuyen_2021.geojson') }}",{
                                     style: {"color": "red", "weight": 4, "opacity": 1, "fillOpacity": 0,  "interactive": false}, filter:filter_quan})
                                   function filter_quan(quan){
                                     if (quan.properties["maDVHC"] == id_2) return true
@@ -561,7 +561,7 @@
                           }
                     });
 
-  var phuongxa = new L.GeoJSON.AJAX("{{ url_for('static', filename='data/phuongxa_2021.geojson') }}",{
+  var phuongxa = new L.GeoJSON.AJAX("/BeCaked{{ url_for(', filename='data/phuongxa_2021.geojson') }}",{
                       style: function(phuong) {
                                 id_3 = phuong.properties["maDVHCXa"]
                                 id_2 = phuong.properties["maDVHCHuye"]
@@ -633,7 +633,7 @@
                                         if (phuongxa_focus !== null) {
                                           map.removeLayer(phuongxa_focus)
                                         }
-                                        phuongxa_focus = new L.GeoJSON.AJAX("{{ url_for('static', filename='data/phuongxa_2021.geojson') }}",{
+                                        phuongxa_focus = new L.GeoJSON.AJAX("/BeCaked{{ url_for(', filename='data/phuongxa_2021.geojson') }}",{
                                           style: {"color": "red", "opacity": 1, "fillOpacity": 0, "interactive": false}, filter:filter_phuong})
                                         function filter_phuong(phuong){
                                           if (phuong.properties["maDVHCXa"] == id_3) return true
